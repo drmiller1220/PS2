@@ -13,7 +13,7 @@
 ## 'm' (which is its default value), Cho-Gains' D if 'type' equals 'd',
 ## or both if 'type' equals 'both.'
 
-violation_test <- function(x, type='m'){
+test.benfords <- function(x, type='m'){
   # First, we take the data x, convert the numeric values to strings, and 
   # remove all but the first character in each string.  In order to keep track of
   # counts of zeroes, we need to specify the numbers as factors.  Then, table()
@@ -44,14 +44,14 @@ violation_test <- function(x, type='m'){
   return(final_list)
 }
 
-violation_test(seq(from=1, to=100, by=1), type='both') # Examples
-violation_test(rep(1, 100), type='d')
-violation_test(rep(1, 100))
+test.benfords(seq(from=1, to=100, by=1), type='both') # Examples
+test.benfords(rep(1, 100), type='d')
+test.benfords(rep(1, 100))
 
 ###################################################################################
 
 print.benfords <- function(x){
-  # function takes list x derived from violation_test function and prints
+  # function takes list x derived from test.benfords function and prints
   # the results in an easily readable form
   #
   # so that we do not force the user to tell us again which tests were
@@ -122,7 +122,7 @@ print.benfords <- function(x){
 
 save.benfords <- function(x,file_name='benfords_results.csv'){
   # receives as input the object x, which is presumably a list from
-  # violation_test, and a desired file name; default file name
+  # test.benfords, and a desired file name; default file name
   # is specified, and it is assumed that a working directory has been set
   sink(file_name)
   # sink() initiates copying all output to a csv file with the specified name
