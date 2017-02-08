@@ -1,3 +1,15 @@
+##
+#' Function for printing Benford's Law test statistics
+#' 
+#' This function produces uses the output of the function "test.benfords" to create a
+#' a table containing the test statistics, and indicating their statstical reliability
+#' @param x A list which is the output of "test.benfords"
+#' 
+#' @return Prints a table in the R console containing each of the test statistics generated
+#' by "test.benfords," as well as asterisks to indicate statistical reliability (and a legend).
+#' 
+#' @author David Ryan Miller
+
 print.benfords <- function(x){
   # function takes list x derived from test.benfords function and prints
   # the results in an easily readable form

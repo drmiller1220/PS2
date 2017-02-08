@@ -1,9 +1,24 @@
-## Function used to calculate Leemis' M and/or Cho-Gains' D, given a matrix or
-## a vector of vote totals.  Function returns Leemis' M if type 'm', Cho-Gains'
-## D if type 'd,' and both statistics if type 'both.'
-## The following function returns Leemis' M if its argument 'type' equals
-## 'm' (which is its default value), Cho-Gains' D if 'type' equals 'd',
-## or both if 'type' equals 'both.'
+##
+#' Function for assessing election fraud using Benford's Law
+#' 
+#' This function produces test statistics and a descriptive summary of the distribution
+#' of the data to assess whether election fraud has occurred given a vector or matrix 
+#' of vote counts.
+#' @param x A numeric vector or matrix of vote counts which are used to calculate
+#' descriptive and test statistics
+#' @param type A string indicating which test statistics should be generated. The
+#' default, "m", generates only the Leemis' M.  "d" generates only the Cho-Gains' D.
+#' "both" generates both the Leemis' M and the Cho-Gains' D.
+#' 
+#' @return A list containing the following:
+#' \item{Proportions}{A table giving the proportion of occurrence of each number as
+#' the leading digit for the vote counts.}
+#' \item{Leemis}{A one element numeric vector containing the Leemis' M statistic
+#' (only generated if type="m" or type="both").}
+#' \item{CG_D}{A one element numeric vector containing the Cho-Gains' Dstatistic
+#' (only generated if type="d" or type="both").}
+#' 
+#' @author David Ryan Miller
 
 test.benfords <- function(x, type='m'){
   # First, we take the data x, convert the numeric values to strings, and 
