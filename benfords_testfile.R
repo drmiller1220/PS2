@@ -49,7 +49,7 @@ save.benfords(test_both, file_name = "test_both.csv")
 # saves table to csv file in working directory
 
 ## 4) checking that subsidiary functions properly throw errors when objects
-## which are not of class "benfords" are provided
+## which are not of class "benfords" are provided by the user
 
 vote_sample_alpha <- c("a","b")
 test.benfords(vote_sample_alpha) # error because input is not numeric
